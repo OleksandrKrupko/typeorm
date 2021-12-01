@@ -45,8 +45,8 @@ describe("github issues > #4220 Fix the bug when using buffer as the key.", () =
         [...Array(10)].map((_, index) => {
             const user = new User();
             user.name = "random-name";
-            user.id = Buffer.from(ids[index], "hex");  
-            return user;   
+            user.id = Buffer.from(ids[index], "hex");
+            return user;
         }).map(user => repo.save(user))
       );
 

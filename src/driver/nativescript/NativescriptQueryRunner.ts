@@ -80,7 +80,7 @@ export class NativescriptQueryRunner extends AbstractSqliteQueryRunner {
                 databaseConnection.execSQL(query, parameters, handler);
             } else {
                 databaseConnection.all(query, parameters, handler);
-            } 
+            }
         });
     }
 

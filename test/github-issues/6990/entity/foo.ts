@@ -11,5 +11,5 @@ export class Foo {
         length: 64,
         nullable: true,
     })
-    varchararray: string[];    
+    varchararray: string[];
 }

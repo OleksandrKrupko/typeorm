@@ -819,14 +819,14 @@ export class EntityManager {
      */
     async findOne<Entity>(entityClass: EntityTarget<Entity>, idOrOptionsOrConditions?: string|string[]|number|number[]|Date|Date[]|ObjectID|ObjectID[]|FindOneOptions<Entity>|FindConditions<Entity>, maybeOptions?: FindOneOptions<Entity>): Promise<Entity|undefined> {
 
-        let findOptions: FindManyOptions<any>|FindOneOptions<any>|undefined = undefined;
+        let findOptions: FindManyOptions<any>|FindOneOptions<any>|undefined;
         if (FindOptionsUtils.isFindOneOptions(idOrOptionsOrConditions)) {
             findOptions = idOrOptionsOrConditions;
         } else if (maybeOptions && FindOptionsUtils.isFindOneOptions(maybeOptions)) {
             findOptions = maybeOptions;
         }
 
-        let options: ObjectLiteral|undefined = undefined;
+        let options: ObjectLiteral|undefined;
         if (idOrOptionsOrConditions instanceof Object && !FindOptionsUtils.isFindOneOptions(idOrOptionsOrConditions))
             options = idOrOptionsOrConditions as ObjectLiteral;
 

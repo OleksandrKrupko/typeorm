@@ -33,7 +33,7 @@ describe("database schema > column length > mysql", () => {
         metadata.findColumnWithPropertyName("char")!.length = "100";
         metadata.findColumnWithPropertyName("varchar")!.length = "100";
         
-        await connection.synchronize(false);        
+        await connection.synchronize(false);
 
         const queryRunner = connection.createQueryRunner();
         const table = await queryRunner.getTable("post");

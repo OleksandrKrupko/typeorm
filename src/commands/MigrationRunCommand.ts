@@ -38,7 +38,7 @@ export class MigrationRunCommand implements yargs.CommandModule {
             console.log("'migrations:run' is deprecated, please use 'migration:run' instead");
         }
 
-        let connection: Connection|undefined = undefined;
+        let connection: Connection|undefined;
         try {
             const connectionOptionsReader = new ConnectionOptionsReader({
                 root: process.cwd(),

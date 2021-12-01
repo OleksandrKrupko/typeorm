@@ -40,7 +40,7 @@ export class NestedSetSubjectExecutor {
             parent = subject.parentSubject.insertedValueSet ? subject.parentSubject.insertedValueSet : subject.parentSubject.entity;
         const parentId = subject.metadata.getEntityIdMap(parent);
 
-        let parentNsRight: number|undefined = undefined;
+        let parentNsRight: number|undefined;
         if (parentId) {
             parentNsRight = await this.queryRunner.manager
                 .createQueryBuilder()
@@ -118,12 +118,12 @@ export class NestedSetSubjectExecutor {
 
             const entityId = subject.metadata.getEntityIdMap(entity);
 
-            let entityNs: NestedSetIds | undefined = undefined;
+            let entityNs: NestedSetIds | undefined;
             if (entityId) {
                 entityNs = (await this.getNestedSetIds(subject.metadata, entityId))[0];
             }
 
-            let parentNs: NestedSetIds | undefined = undefined;
+            let parentNs: NestedSetIds | undefined;
             if (parentId) {
                 parentNs = (await this.getNestedSetIds(subject.metadata, parentId))[0];
             }

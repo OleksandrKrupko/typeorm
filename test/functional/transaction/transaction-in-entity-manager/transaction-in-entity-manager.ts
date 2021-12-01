@@ -17,7 +17,7 @@ describe("transaction > transaction with entity manager", () => {
 
     it("should execute all operations in a single transaction", () => Promise.all(connections.map(async connection => {
 
-        let postId: number|undefined = undefined, categoryId: number|undefined = undefined;
+        let postId: number|undefined, categoryId: number|undefined;
 
         await connection.manager.transaction(async entityManager => {
 
@@ -52,7 +52,7 @@ describe("transaction > transaction with entity manager", () => {
 
     it("should not save anything if any of operation in transaction fail", () => Promise.all(connections.map(async connection => {
 
-        let postId: number|undefined = undefined, categoryId: number|undefined = undefined;
+        let postId: number|undefined, categoryId: number|undefined;
 
         try {
             await connection.manager.transaction(async entityManager => {

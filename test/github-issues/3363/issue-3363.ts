@@ -22,7 +22,7 @@ describe("github issues > #3363 Isolation Level in transaction() from Connection
         if (connection.driver instanceof SapDriver || connection.driver instanceof OracleDriver)
             return;
 
-        let postId: number|undefined = undefined, categoryId: number|undefined = undefined;
+        let postId: number|undefined, categoryId: number|undefined;
 
         await connection.transaction("READ UNCOMMITTED", async transaction => {
 
@@ -57,7 +57,7 @@ describe("github issues > #3363 Isolation Level in transaction() from Connection
 
     it("should execute operations in SERIALIZABLE isolation level", () => Promise.all(connections.map(async connection => {
 
-        let postId: number|undefined = undefined, categoryId: number|undefined = undefined;
+        let postId: number|undefined, categoryId: number|undefined;
 
         await connection.transaction("SERIALIZABLE", async entityManager => {
 

@@ -127,7 +127,7 @@ export abstract class BaseQueryRunner {
         if (!tableNames) {
             // Don't cache in this case.
             // This is the new case & isn't used anywhere else anyway.
-            return await this.loadTables(tableNames);
+            return this.loadTables(tableNames);
         }
 
         this.loadedTables = await this.loadTables(tableNames);

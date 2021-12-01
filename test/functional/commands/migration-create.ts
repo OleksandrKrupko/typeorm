@@ -1,10 +1,10 @@
 import sinon from "sinon";
 import { ConnectionOptions, ConnectionOptionsReader, DatabaseType } from "../../../src";
-import { 
-    setupTestingConnections, 
-    createTestingConnections, 
-    closeTestingConnections, 
-    reloadTestingDatabases 
+import {
+    setupTestingConnections,
+    createTestingConnections,
+    closeTestingConnections,
+    reloadTestingDatabases
 } from "../../utils/test-utils";
 import { CommandUtils } from "../../../src/commands/CommandUtils";
 import { MigrationCreateCommand } from "../../../src/commands/MigrationCreateCommand";

@@ -10,7 +10,7 @@ export class TestEntity3 {
     @OneToOne(t => TestEntity2, a => a.Entity3)
     Entity2: TestEntity2;
 
-    @Column() 
+    @Column()
     name: string;
 
     @OneToMany(t => TestEntity4, entity4 => entity4.Entity3)

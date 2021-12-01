@@ -372,7 +372,7 @@ export abstract class AbstractSqliteQueryRunner extends BaseQueryRunner implemen
         if (!oldColumn)
             throw new TypeORMError(`Column "${oldTableColumnOrName}" was not found in the "${table.name}" table.`);
 
-        let newColumn: TableColumn|undefined = undefined;
+        let newColumn: TableColumn|undefined;
         if (newTableColumnOrName instanceof TableColumn) {
             newColumn = newTableColumnOrName;
         } else {
@@ -823,7 +823,7 @@ export abstract class AbstractSqliteQueryRunner extends BaseQueryRunner implemen
             ]);
 
             // find column name with auto increment
-            let autoIncrementColumnName: string|undefined = undefined;
+            let autoIncrementColumnName: string|undefined;
             const tableSql: string = dbTable["sql"];
             let autoIncrementIndex = tableSql.toUpperCase().indexOf("AUTOINCREMENT");
             if (autoIncrementIndex !== -1) {

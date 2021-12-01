@@ -37,7 +37,7 @@ describe("database schema > column length > postgres", () => {
         metadata.findColumnWithPropertyName("character")!.length = "100";
         metadata.findColumnWithPropertyName("char")!.length = "100";
 
-        await connection.synchronize(false);        
+        await connection.synchronize(false);
 
         const queryRunner = connection.createQueryRunner();
         const table = await queryRunner.getTable("post");

@@ -255,7 +255,7 @@ export class BaseEntity {
      * Unlike save method executes a primitive operation without cascades, relations and other operations included.
      * Executes fast and efficient INSERT ... ON CONFLICT DO UPDATE/ON DUPLICATE KEY UPDATE query.
      */
-    static upsert<T extends BaseEntity>(this: ObjectType<T> & typeof BaseEntity, 
+    static upsert<T extends BaseEntity>(this: ObjectType<T> & typeof BaseEntity,
         entityOrEntities: QueryDeepPartialEntity<T> | (QueryDeepPartialEntity<T>[]),
         conflictPathsOrOptions: string[] | UpsertOptions<T>): Promise<InsertResult> {
         return this.getRepository<T>().upsert(entityOrEntities, conflictPathsOrOptions);

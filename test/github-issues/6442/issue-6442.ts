@@ -21,8 +21,8 @@ describe("github issues > #6442 JoinTable does not respect inverseJoinColumns re
             enabledDrivers: ["mysql"]
         });
     });
-    beforeEach(async () => await reloadTestingDatabases(connections));
-    after(async () => await closeTestingConnections(connections));
+    beforeEach(async () => reloadTestingDatabases(connections));
+    after(async () => closeTestingConnections(connections));
 
     it("should generate column widths equal to the referenced column widths", async () => {
 

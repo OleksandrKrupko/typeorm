@@ -11,8 +11,8 @@ describe("github issues > #3588 Migration:generate issue with onUpdate using mys
         dropSchema: true,
         enabledDrivers: ["mysql"],
     }));
-    beforeEach(async () => await reloadTestingDatabases(connections));
-    after(async () => await closeTestingConnections(connections));
+    beforeEach(async () => reloadTestingDatabases(connections));
+    after(async () => closeTestingConnections(connections));
 
     it("can recognize model changes", () => Promise.all(connections.map(async connection => {
         const schemaBuilder = connection.driver.createSchemaBuilder();

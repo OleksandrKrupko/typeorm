@@ -81,7 +81,7 @@ export class ConnectionOptionsReader {
      * todo: get in count NODE_ENV somehow
      */
     protected async load(): Promise<ConnectionOptions[]|undefined> {
-        let connectionOptions: ConnectionOptions|ConnectionOptions[]|undefined = undefined;
+        let connectionOptions: ConnectionOptions|ConnectionOptions[]|undefined;
 
         const fileFormats = ["env", "js", "cjs", "ts", "json", "yml", "yaml", "xml"];
 

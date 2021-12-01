@@ -20,11 +20,11 @@ describe("github issues > #8018 Non-unique relation property names causes entity
                 dropSchema: true,
             }))
     );
-    beforeEach(async () => await reloadTestingDatabases(connections));
+    beforeEach(async () => reloadTestingDatabases(connections));
     after(() => closeTestingConnections(connections));
 
     it("should create child entities of the correct type", async () =>
-        await Promise.all(
+        Promise.all(
             connections.map(async (connection) => {
                 const parent = new Parent();
                 parent.name = "parent";

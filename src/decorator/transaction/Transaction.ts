@@ -30,7 +30,7 @@ export function Transaction(connectionOrOptions?: string | TransactionOptions): 
         // override method descriptor with proxy method
         descriptor.value = function(...args: any[]) {
             let connectionName = "default";
-            let isolationLevel: IsolationLevel | undefined = undefined;
+            let isolationLevel: IsolationLevel | undefined;
             if (connectionOrOptions) {
                 if (typeof connectionOrOptions === "string") {
                     connectionName = connectionOrOptions;
