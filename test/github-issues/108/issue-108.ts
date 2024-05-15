@@ -13,7 +13,7 @@ describe("github issues > #108 Error with constraint names on postgres", () => {
     }));
     after(() => closeTestingConnections(connections));
 
-    it("should sync even when there unqiue constraints placed on similarly named columns", () => Promise.all(connections.map(async connection => {        
+    it("should sync even when there unqiue constraints placed on similarly named columns", () => Promise.all(connections.map(async connection => {
        // By virtue that we got here means that it must have worked.
        expect(true).is.true;
     })));

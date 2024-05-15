@@ -161,7 +161,7 @@ export class MongoEntityManager extends EntityManager {
             if (optionsOrConditions.order)
                 cursor.sort(this.convertFindOptionsOrderToOrderCriteria(optionsOrConditions.order));
         }
-        return await cursor.toArray();
+        return cursor.toArray();
     }
 
     /**

@@ -28,7 +28,7 @@ export class SchemaSyncCommand implements yargs.CommandModule {
 
     async handler(args: yargs.Arguments) {
 
-        let connection: Connection|undefined = undefined;
+        let connection: Connection|undefined;
         try {
             const connectionOptionsReader = new ConnectionOptionsReader({
                 root: process.cwd(),

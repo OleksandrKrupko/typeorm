@@ -70,7 +70,7 @@ describe("entity subscriber > transaction flow", () => {
             beforeTransactionStart.resetHistory();
             afterTransactionStart.resetHistory();
 
-            let isolationLevel: any = undefined;
+            let isolationLevel: any;
             if (connection.driver instanceof SapDriver || connection.driver instanceof OracleDriver) {
                 isolationLevel = "READ COMMITTED";
             }

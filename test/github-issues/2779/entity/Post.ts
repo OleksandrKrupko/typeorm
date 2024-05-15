@@ -9,7 +9,7 @@ export class Post {
 
   @Column("set", {
     default: [Role.Admin, Role.Developer],
-    enum: Role 
+    enum: Role
   })
   roles: Role[];
 }

@@ -6,7 +6,7 @@ export class User {
         comment: "The ID of this user.",
         length: 16,
         type: "binary",
-    })    
+    })
     id: Buffer;
     
     @Column()

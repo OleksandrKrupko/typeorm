@@ -24,7 +24,7 @@ describe("github issues > #7155", () => {
 
     /**
      * ------------------ SINGLE ID ------------------
-     * 
+     *
      * Closure table
      */
     it("(Closure/SingleID/Save) Update without parent", () =>
@@ -1154,7 +1154,7 @@ describe("github issues > #7155", () => {
 
     /**
      * ------------------ MULTI ID ------------------
-     * 
+     *
      * Nested set
      */
     it("(Nested/MultiID/Save) Update without tree change", () =>

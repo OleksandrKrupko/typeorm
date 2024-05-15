@@ -33,8 +33,8 @@ export class QueryCommand implements yargs.CommandModule {
 
     async handler(args: yargs.Arguments) {
 
-        let connection: Connection|undefined = undefined;
-        let queryRunner: QueryRunner|undefined = undefined;
+        let connection: Connection|undefined;
+        let queryRunner: QueryRunner|undefined;
         try {
 
             // create a connection

@@ -25,7 +25,7 @@ describe("github issues > #2464 - ManyToMany onDelete option not working", () =>
 
         try {
           await repo.delete(1);
-          expect.fail(); 
+          expect.fail();
         } catch (e) {
           e.should.be.instanceOf(QueryFailedError);
         }

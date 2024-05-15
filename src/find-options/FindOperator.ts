@@ -58,7 +58,7 @@ export class FindOperator<T> {
         this._value = value;
         this._useParameter = useParameter;
         this._multipleParameters = multipleParameters;
-        this._getSql = getSql; 
+        this._getSql = getSql;
         this._objectLiteralParameters = objectLiteralParameters;
     }
 

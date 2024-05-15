@@ -87,7 +87,7 @@ createConnection(options).then(connection => {
             return postRepository.save(posts[0]);
         })
         .then(posts => {
-            console.log("Two post's author has been removed.");  
+            console.log("Two post's author has been removed.");
             console.log("Now lets check many-to-many relations");
             
             let category1 = categoryRepository.create();

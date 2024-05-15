@@ -37,7 +37,7 @@ export class MigrationRevertCommand implements yargs.CommandModule {
             console.log("'migrations:revert' is deprecated, please use 'migration:revert' instead");
         }
 
-        let connection: Connection|undefined = undefined;
+        let connection: Connection|undefined;
         try {
             const connectionOptionsReader = new ConnectionOptionsReader({
                 root: process.cwd(),

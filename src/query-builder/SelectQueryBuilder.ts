@@ -2112,7 +2112,7 @@ export class SelectQueryBuilder<Entity> extends QueryBuilder<Entity> implements 
         const [sql, parameters] = this.getQueryAndParameters();
         const queryId = sql + " -- PARAMETERS: " + JSON.stringify(parameters);
         const cacheOptions = typeof this.connection.options.cache === "object" ? this.connection.options.cache : {};
-        let savedQueryResultCacheOptions: QueryResultCacheOptions|undefined = undefined;
+        let savedQueryResultCacheOptions: QueryResultCacheOptions|undefined;
         let cacheError = false;
         if (this.connection.queryResultCache && (this.expressionMap.cache || cacheOptions.alwaysEnabled)) {
             try {

@@ -82,7 +82,7 @@ export class MigrationExecutor {
         return this.withQueryRunner(async queryRunner => {
             await this.createMigrationsTableIfNotExist(queryRunner);
 
-            return await this.loadExecutedMigrations(queryRunner);
+            return this.loadExecutedMigrations(queryRunner);
         });
     }
 
@@ -385,7 +385,7 @@ export class MigrationExecutor {
     protected async loadExecutedMigrations(queryRunner: QueryRunner): Promise<Migration[]> {
         if (this.connection.driver instanceof MongoDriver) {
             const mongoRunner = queryRunner as MongoQueryRunner;
-            return await mongoRunner.databaseConnection
+            return mongoRunner.databaseConnection
             .db(this.connection.driver.database!)
             .collection(this.migrationsTableName)
             .find<Migration>()

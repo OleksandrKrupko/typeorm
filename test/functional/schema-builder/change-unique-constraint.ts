@@ -25,8 +25,8 @@ describe("schema builder > change unique constraint", () => {
     it("should correctly add new unique constraint", () => Promise.all(connections.map(async connection => {
         const teacherMetadata = connection.getMetadata(Teacher);
         const nameColumn = teacherMetadata.findColumnWithPropertyName("name")!;
-        let uniqueIndexMetadata: IndexMetadata|undefined = undefined;
-        let uniqueMetadata: UniqueMetadata|undefined = undefined;
+        let uniqueIndexMetadata: IndexMetadata|undefined;
+        let uniqueMetadata: UniqueMetadata|undefined;
 
         // Mysql and SAP stores unique constraints as unique indices.
         if (connection.driver instanceof MysqlDriver || connection.driver instanceof SapDriver) {

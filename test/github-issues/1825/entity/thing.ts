@@ -10,9 +10,9 @@ export class EmbeddedInThing {
 
 @Entity()
 export class Thing {
-  @PrimaryGeneratedColumn() 
+  @PrimaryGeneratedColumn()
   public id: number;
 
-  @Column(type => EmbeddedInThing) 
+  @Column(type => EmbeddedInThing)
   public embeddedThing: EmbeddedInThing;
 }

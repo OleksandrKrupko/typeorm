@@ -152,10 +152,10 @@ export class DriverUtils {
         const base = (secondSlash !== -1) ? preBase.substr(0, secondSlash) : preBase;
         let afterBase = (secondSlash !== -1) ? preBase.substr(secondSlash + 1) : undefined;
         let afterQuestionMark = "";
-        let host = undefined;
-        let port = undefined;
-        let hostReplicaSet = undefined;
-        let replicaSet = undefined;
+        let host;
+        let port;
+        let hostReplicaSet;
+        let replicaSet;
 
         let optionsObject: any = {};
 

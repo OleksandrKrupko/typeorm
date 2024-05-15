@@ -25,7 +25,7 @@ describe("github issues > #513 Incorrect time/datetime types for SQLite", () => 
       dbColumns.map((dbColumn) => {
         if (dbColumn["name"] === "dateTimeColumn") {
           columnType = dbColumn["type"];
-        }        
+        }
       });
 
       // Expect "datetime" type to translate to SQLite affinity type "DATETIME"
@@ -55,7 +55,7 @@ describe("github issues > #513 Incorrect time/datetime types for SQLite", () => 
       dbColumns.map((dbColumn) => {
         if (dbColumn["name"] === "timeColumn") {
           columnType = dbColumn["type"];
-        }        
+        }
       });
 
       // Expect "time" type to translate to SQLite type "TEXT"

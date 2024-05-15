@@ -164,7 +164,7 @@ export class ClosureSubjectExecutor {
 
         /**
          * Only insert new parent if it exits
-         * 
+         *
          * This only happens if the entity doesn't become a root entity
          */
         if (parent) {

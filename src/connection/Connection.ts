@@ -311,7 +311,7 @@ export class Connection {
             throw new CannotExecuteNotConnectedError(this.name);
         }
         const migrationExecutor = new MigrationExecutor(this);
-        return await migrationExecutor.showMigrations();
+        return migrationExecutor.showMigrations();
     }
 
     /**

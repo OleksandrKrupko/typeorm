@@ -98,7 +98,7 @@ describe("github issues > #6168 fix multiple foreign keys with the same name in 
 
         expect(categoryTable.foreignKeys.length).to.eq(1);
         expect(categoryTable.foreignKeys[0].name).to.eq("FK_CATEGORY_QUESTION");
-        expect(categoryTable.foreignKeys[0].columnNames.length).to.eq(1);  // before the fix this was 2, one for each schema 
+        expect(categoryTable.foreignKeys[0].columnNames.length).to.eq(1);  // before the fix this was 2, one for each schema
         expect(categoryTable.foreignKeys[0].columnNames[0]).to.eq("questionId");
 
         expect(questionTable.foreignKeys.length).to.eq(0);

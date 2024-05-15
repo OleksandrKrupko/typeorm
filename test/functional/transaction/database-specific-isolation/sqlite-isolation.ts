@@ -17,7 +17,7 @@ describe("transaction > transaction with sqlite connection partial isolation sup
 
   it("should execute all operations in a single transaction with READ UNCOMMITTED isolation level", () => Promise.all(connections.map(async connection => {
 
-      let postId: number|undefined = undefined, categoryId: number|undefined = undefined;
+      let postId: number|undefined, categoryId: number|undefined;
 
       await connection.manager.transaction("READ UNCOMMITTED", async entityManager => {
 
@@ -52,7 +52,7 @@ describe("transaction > transaction with sqlite connection partial isolation sup
 
   it("should execute all operations in a single transaction with SERIALIZABLE isolation level", () => Promise.all(connections.map(async connection => {
 
-      let postId: number|undefined = undefined, categoryId: number|undefined = undefined;
+      let postId: number|undefined, categoryId: number|undefined;
 
       await connection.manager.transaction("SERIALIZABLE", async entityManager => {
 

@@ -8,15 +8,15 @@ export class Foo  extends BaseEntity {
   @PrimaryColumn() id: number;
 
   @JoinTable()
-  @ManyToMany(() => Bar, bar => bar.foos, { 
+  @ManyToMany(() => Bar, bar => bar.foos, {
     cascade: ["insert", "update"],
-    onDelete: "NO ACTION" 
+    onDelete: "NO ACTION"
   })
   bars?: Bar[];
 
 
   @JoinTable()
-  @ManyToMany(() => Bar, bar => bar.foos, { 
+  @ManyToMany(() => Bar, bar => bar.foos, {
     cascade: ["insert", "update"],
   })
   otherBars?: Bar[];

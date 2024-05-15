@@ -584,8 +584,8 @@ export class SqlServerQueryRunner extends BaseQueryRunner implements QueryRunner
         let newTable = oldTable.clone();
 
         // we need database name and schema name to rename FK constraints
-        let dbName: string|undefined = undefined;
-        let schemaName: string|undefined = undefined;
+        let dbName: string|undefined;
+        let schemaName: string|undefined;
         let oldTableName: string = oldTable.name;
         const splittedName = oldTable.name.split(".");
         if (splittedName.length === 3) {
@@ -755,7 +755,7 @@ export class SqlServerQueryRunner extends BaseQueryRunner implements QueryRunner
         if (!oldColumn)
             throw new TypeORMError(`Column "${oldTableColumnOrName}" was not found in the "${table.name}" table.`);
 
-        let newColumn: TableColumn|undefined = undefined;
+        let newColumn: TableColumn|undefined;
         if (newTableColumnOrName instanceof TableColumn) {
             newColumn = newTableColumnOrName;
         } else {
@@ -794,8 +794,8 @@ export class SqlServerQueryRunner extends BaseQueryRunner implements QueryRunner
             if (newColumn.name !== oldColumn.name) {
 
                 // we need database name and schema name to rename FK constraints
-                let dbName: string|undefined = undefined;
-                let schemaName: string|undefined = undefined;
+                let dbName: string|undefined;
+                let schemaName: string|undefined;
                 const splittedName = table.name.split(".");
                 if (splittedName.length === 3) {
                     dbName = splittedName[0];
@@ -1710,7 +1710,7 @@ export class SqlServerQueryRunner extends BaseQueryRunner implements QueryRunner
         ]);
 
         // create table schemas for loaded tables
-        return await Promise.all(dbTables.map(async dbTable => {
+        return Promise.all(dbTables.map(async dbTable => {
             const table = new Table();
 
             const getSchemaFromKey = (dbObject: any, key: string) => {

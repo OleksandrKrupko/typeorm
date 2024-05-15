@@ -92,7 +92,7 @@ describe("github issues > #7974 Adding relations option to findTrees()", () => {
 
   after(() => closeTestingConnections(connections));
 
-  it("should return tree without sites relations", async () => await Promise.all(connections.map(async connection => {
+  it("should return tree without sites relations", async () => Promise.all(connections.map(async connection => {
 
     let result = await connection.getTreeRepository(Category).findTrees();
 
@@ -105,7 +105,7 @@ describe("github issues > #7974 Adding relations option to findTrees()", () => {
 
   })));
 
-  it("should return tree with sites relations", async () => await Promise.all(connections.map(async connection => {
+  it("should return tree with sites relations", async () => Promise.all(connections.map(async connection => {
 
     let result = await connection.getTreeRepository(Category).findTrees({ relations: ["sites"] });
 

@@ -11,6 +11,6 @@ export class NamingStrategyUnderTest extends DefaultNamingStrategy implements Na
       return columnNames.reduce(
         (name, column) => `${name}_${column}`,
         `fk_${tableOrName}_${referencedTablePath}`,
-      );  
+      );
     }
 }
